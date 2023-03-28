@@ -239,4 +239,4 @@ def run_Debevec(data_name):
         plt.savefig(f'{prefix}/recovery_curve.jpg') 
         
 if __name__ == "__main__":
-    run_Debevec(data_name="exposures_3")
+    run_Debevec(data_name="exposures_2")
