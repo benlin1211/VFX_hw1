@@ -73,7 +73,7 @@ def solve_response_curve(sample, ln_exposure_times, l=100):
     Zmax = 255 
     Z_range = Zmax-Zmin+1 # 256
     # A: (NP+255) by (256+N)
-    A = np.zeros((sample.shape[0]*sample.shape[1]+Z_range+1, Z_range+1+sample.shape[0]), dtype=np.float64)
+    A = np.zeros((sample.shape[0]*sample.shape[1]+Z_range, Z_range+1+sample.shape[0]), dtype=np.float64)
     # b: (NP+255) by (1)
     b = np.zeros((A.shape[0], 1), dtype=np.float64)
     # weight function w(z)
@@ -145,7 +145,8 @@ def globalTonemap(img, l):
 def run_Debevec(data_name):
     print("Run Debevec")
     print(data_name)
-    os.makedirs(f'./result_Debevec_{data_name}/',exist_ok=True)
+    prefix = f'./result_Debevec_{data_name}/'
+    os.makedirs(prefix,exist_ok=True)
     images, ln_exposure_times = load_data(data_name)
     # print(exposure_times)
 
@@ -176,14 +177,13 @@ def run_Debevec(data_name):
         
         # Show curve
         plt.figure()
-        plt.plot( x, g[:, c] , color=color[c])
-        plt.savefig(f'./result_Debevec_{data_name}/curve_{color[c]}.jpg') 
+        plt.plot( x, g[:, c], color=color[c])
+        plt.savefig(f'{prefix}/curve_{color[c]}.jpg') 
 
     img_rad = compute_radiance(images, ln_exposure_times, g)
-    #hdr_img = cv2.normalize(img_rad, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
-    hdr_img=img_rad
-    
-    cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}.hdr', hdr_img)
+    hdr_img = cv2.normalize(img_rad, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
+
+    cv2.imwrite(f'{prefix}/{data_name}.hdr', hdr_img)
     # plt.figure()
     # plt.imsave(f'./result_Debevec/{data_name}.hdr', hdr_img)
     
@@ -193,21 +193,21 @@ def run_Debevec(data_name):
     cmap = colorize(cmap)
     # cv2.imwrite(f'./result_Debevec/{data_name}_cmap.jpg', np.uint8(cmap*255.))
     plt.figure()
-    plt.imsave(f'./result_Debevec_{data_name}/{data_name}_cmap.jpg', np.uint8(cmap*255.), cmap="jet")
+    plt.imsave(f'{prefix}/{data_name}_cmap.jpg', np.uint8(cmap*255.), cmap="jet")
     
     # Gamma tone mapping
     if True:
-        Gamma = np.uint8(globalTonemap(hdr_img, 1.3) * 255.)
+        Gamma = np.uint8(globalTonemap(hdr_img, 1.5) * 255.)
         # output = cv2.normalize(output, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
         #plt.figure()
-        cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}_gamma_tomemapping.jpg', Gamma)
+        cv2.imwrite(f'{prefix}/{data_name}_gamma_tomemapping.jpg', Gamma)
 
     # Mantiuk tone mapping
     if True:
         tm = cv2.createTonemapMantiuk()
         ldrMantiuk = np.uint8(255. * tm.process((hdr_img/255.).astype(np.float32)))
         #plt.figure()
-        cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}_Mantiuk_tomemapping.jpg', ldrMantiuk)
+        cv2.imwrite(f'{prefix}/{data_name}_Mantiuk_tomemapping.jpg', ldrMantiuk)
 
     # # Drago tone mapping
     # if True:
@@ -227,7 +227,7 @@ def run_Debevec(data_name):
         # hdr_img is CV_32FC3 ?
         tonemapReinhard = cv2.createTonemapReinhard(1.5, 0, 0, 0)
         ldrReinhard = tonemapReinhard.process(np.float32(hdr_img))
-        cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}_Reinhard_tomemapping.jpg', ldrReinhard * 255)
+        cv2.imwrite(f'{prefix}/{data_name}_Reinhard_tomemapping.jpg', ldrReinhard * 255)
 
     if True:
         plt.figure()
@@ -235,10 +235,8 @@ def run_Debevec(data_name):
         color = ['r', 'g', 'b']
         for c in range(n_channels):
             # Show curve
-            plt.plot( x, g[:, c] , color=color[c])
-        plt.savefig(f'./result_Debevec_{data_name}/{data_name}_recovery_curve.jpg') 
-    
-
+            plt.plot( x, g[:, c], color=color[c])
+        plt.savefig(f'{prefix}/recovery_curve.jpg') 
         
 if __name__ == "__main__":
-    run_Debevec(data_name="exposures_2")
+    run_Debevec(data_name="exposures_3")
