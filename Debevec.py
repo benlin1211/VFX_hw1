@@ -6,7 +6,7 @@ import math
 from tqdm import trange 
 from matplotlib.pylab import cm
 import matplotlib.pylab as plt
-
+import random
 
 
 # utils
@@ -29,25 +29,51 @@ def init_weight_function():
     return w
 
 # utils
-def sampling(images, n_channels=3):
-    # To solve the ODE, we need N(P-1) > (255-0) => P>255/N - 1
-    N = len(images)
-    P = math.ceil(255*2/(N-1))*2 # ?
-    Zmin = 0 
-    Zmax = 255 
-    # P = Zmax-Zmin
+# def sampling(images, n_channels=3):
+#     # To solve the ODE, we need N(P-1) > (255-0) => P>255/N - 1
+#     N = len(images)
+#     P = math.ceil(255*2/(N-1))*2 # ?
+#     Zmin = 0 
+#     Zmax = 255 
+#     # P = Zmax-Zmin
 
-    # choose random images 
-    # images[0].shape = (1424, 2144, 3)
-    width, height = images[0].shape[0], images[0].shape[1]
+#     # choose random images 
+#     # images[0].shape = (1424, 2144, 3)
+#     width, height = images[0].shape[0], images[0].shape[1]
 
-    sample_idx = (np.random.choice(width, P), np.random.choice(height, P))
+#     sample_idx = (np.random.choice(width, P), np.random.choice(height, P))
 
-    sample = np.zeros((N, P, n_channels), dtype=np.uint8)
-    for i in range(N):
-        sample[i] = images[i][sample_idx]
-        
+#     sample = np.zeros((N, P, n_channels), dtype=np.uint8)
+#     for i in range(N):
+#         sample[i] = images[i][sample_idx]
+    
+#     print(sample.shape)
+#     return sample
+
+def sampling(images, n_channels=3): #random sample from 
+    Z_min, Z_max = 0, 256
+
+    num_images = len(images)
+
+    num_sample = Z_max - Z_min
+    sample = np.zeros((num_sample, num_images, n_channels), dtype=float)
+   
+    sample_img = images[2]
+    idx_list = []
+    # sample for all Z_min
+    for c in range(n_channels):
+        for i in range(Z_min, Z_max):
+            # print(sample_img[:,:,c])
+            (rows, cols)  = np.where(sample_img[:,:,c] == i)
+            if len(rows) == 0 and len(cols) == 0:
+                continue
+            idx = random.randrange(len(rows))
+            # sample among all images
+            for j in range(num_images):
+                sample[i, j, c] = images[j][rows[idx], cols[idx]][c]
+    print(sample.shape)
     return sample
+
 
 # load_data
 def load_data(data_name):
@@ -66,14 +92,15 @@ def load_data(data_name):
     return images, ln_exposure_times
 
 # solve_response_curve
-def solve_response_curve(sample, ln_exposure_times, l=100):
+def solve_response_curve(sample_c, ln_exposure_times, l=100):
     # print(sample.shape)
+    # (num_sample, num_images)
     # print(ln_exposure_times.shape)
     Zmin = 0 
     Zmax = 255 
     Z_range = Zmax-Zmin+1 # 256
     # A: (NP+255) by (256+N)
-    A = np.zeros((sample.shape[0]*sample.shape[1]+Z_range, Z_range+1+sample.shape[0]), dtype=np.float64)
+    A = np.zeros((sample_c.shape[0]*sample_c.shape[1]+Z_range, Z_range+1+sample_c.shape[0]), dtype=np.float64)
     # b: (NP+255) by (1)
     b = np.zeros((A.shape[0], 1), dtype=np.float64)
     # weight function w(z)
@@ -81,13 +108,13 @@ def solve_response_curve(sample, ln_exposure_times, l=100):
     
     k = 0
     # NP equations
-    for i in range(sample.shape[0]):
-        for j in range(sample.shape[1]):
-            I_ij = sample[i,j]
+    for i in range(sample_c.shape[0]):
+        for j in range(sample_c.shape[1]):
+            I_ij = int( sample_c[i,j] )
             w_ij = w[int(I_ij)]
             A[k, I_ij] = w_ij
             A[k, Z_range + i] = -w_ij
-            b[k, 0] = w_ij * ln_exposure_times[i]
+            b[k, 0] = w_ij * ln_exposure_times[j]
             k += 1
     # Color normalize equation: g(127)=1
     A[k, int((Zmax - Zmin) // 2)] = 1
@@ -106,7 +133,9 @@ def solve_response_curve(sample, ln_exposure_times, l=100):
 
     # Finally, g is obtained.
     g = x[0:Z_range]
-    # print(g)
+    lE = x[Z_range:]
+    #print(g)
+    #print(lE)
 
     return g[:,0]
 
@@ -159,6 +188,7 @@ def run_Debevec(data_name):
     
     # Sample some indices from image.
     sample = sampling(images, n_channels)
+    # sample.shape: x, y, c
     # print(sample[:,:,0].shape)
     
     # For each individual channel:
@@ -239,4 +269,4 @@ def run_Debevec(data_name):
         plt.savefig(f'{prefix}/recovery_curve.jpg') 
         
 if __name__ == "__main__":
-    run_Debevec(data_name="exposures_2")
+    run_Debevec(data_name="exposures_3")
