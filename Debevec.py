@@ -86,6 +86,10 @@ def load_data(data_name):
     # print(len(images))
     
     exposure_times = 1/np.array([4.0, 8.0, 15.0, 30.0, 60.0, 125.0, 250.0, 500.0, 1000.0, 2000.0], dtype=np.float32)
+    if data_name=="exposures_1":
+        exposure_times = np.array([13.0, 10.0, 4.0, 3.2, 1.0, 0.8, 0.3, 1/4.0, 1/60.0, 1/80.0], dtype=np.float32)
+    if data_name=="exposures_4":
+        exposure_times = 1/np.array([4.0, 8.0, 15.0, 30.0, 60.0, 125.0, 250.0, 500.0, 1000.0], dtype=np.float32)
     
     # important: 取log
     ln_exposure_times = np.log(exposure_times)
@@ -227,7 +231,7 @@ def run_Debevec(data_name):
     
     # Gamma tone mapping
     if True:
-        Gamma = np.uint8(globalTonemap(hdr_img, 1.5) * 255.)
+        Gamma = np.uint8(globalTonemap(hdr_img, 0.6) * 255.)
         # output = cv2.normalize(output, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
         #plt.figure()
         cv2.imwrite(f'{prefix}/{data_name}_gamma_tomemapping.jpg', Gamma)
@@ -269,4 +273,4 @@ def run_Debevec(data_name):
         plt.savefig(f'{prefix}/recovery_curve.jpg') 
         
 if __name__ == "__main__":
-    run_Debevec(data_name="exposures_3")
+    run_Debevec(data_name="exposures_2")
