@@ -7,6 +7,8 @@ from tqdm import trange
 from matplotlib.pylab import cm
 import matplotlib.pylab as plt
 
+
+
 # utils
 def run_alignment(images):
     alignMTB = cv2.createAlignMTB()
@@ -142,6 +144,7 @@ def globalTonemap(img, l):
 
 def run_Debevec(data_name):
     print("Run Debevec")
+    print(data_name)
     os.makedirs(f'./result_Debevec_{data_name}/',exist_ok=True)
     images, ln_exposure_times = load_data(data_name)
     # print(exposure_times)
@@ -177,7 +180,8 @@ def run_Debevec(data_name):
         plt.savefig(f'./result_Debevec_{data_name}/curve_{color[c]}.jpg') 
 
     img_rad = compute_radiance(images, ln_exposure_times, g)
-    hdr_img = cv2.normalize(img_rad, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
+    #hdr_img = cv2.normalize(img_rad, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
+    hdr_img=img_rad
     
     cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}.hdr', hdr_img)
     # plt.figure()
@@ -193,18 +197,37 @@ def run_Debevec(data_name):
     
     # Gamma tone mapping
     if True:
-        output = np.uint8(globalTonemap(hdr_img, 1.3) * 255.)
+        Gamma = np.uint8(globalTonemap(hdr_img, 1.3) * 255.)
         # output = cv2.normalize(output, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
-        plt.figure()
-        # cv2.imwrite(f'./result_Debevec/{data_name}_tomemapping.jpg', output)
-        plt.imsave(f'./result_Debevec_{data_name}/{data_name}_gamma_tomemapping.jpg', output)
+        #plt.figure()
+        cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}_gamma_tomemapping.jpg', Gamma)
 
     # Mantiuk tone mapping
+    if True:
         tm = cv2.createTonemapMantiuk()
-        output = np.uint8(255. * tm.process((hdr_img/255.).astype(np.float32)))
-        plt.figure()
-        plt.imsave(f'./result_Debevec_{data_name}/{data_name}_Mantiuk_tomemapping.jpg', output)
+        ldrMantiuk = np.uint8(255. * tm.process((hdr_img/255.).astype(np.float32)))
+        #plt.figure()
+        cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}_Mantiuk_tomemapping.jpg', ldrMantiuk)
 
+    # # Drago tone mapping
+    # if True:
+    #     tonemapDrago = cv2.createTonemapDrago(1.0, 0.7)
+    #     ldrDrago = tonemapDrago.process(hdr_img/255.)
+    #     ldrDrago = 3 * ldrDrago
+    #     cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}_Drago_tomemapping.jpg', ldrDrago * 255)
+
+    # if True: has no attribute
+    #     tonemapDurand = cv2.createTonemapDurand(1.5, 4, 1.0, 1, 1)
+    #     ldrDurand = tonemapDurand.process(hdr_img/255.)
+    #     ldrDurand = 3 * ldrDurand
+    #     cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}_Durand_tomemapping.jpg', ldrDurand * 255)
+
+    # Tonemap using Reinhard's method to obtain 24-bit color image
+    if True:
+        # hdr_img is CV_32FC3 ?
+        tonemapReinhard = cv2.createTonemapReinhard(1.5, 0, 0, 0)
+        ldrReinhard = tonemapReinhard.process(np.float32(hdr_img))
+        cv2.imwrite(f'./result_Debevec_{data_name}/{data_name}_Reinhard_tomemapping.jpg', ldrReinhard * 255)
 
     if True:
         plt.figure()
