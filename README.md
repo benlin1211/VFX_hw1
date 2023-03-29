@@ -29,7 +29,7 @@
 
 * 場景ㄧ：森林系館走廊
 
-![](https://i.imgur.com/XLaETY8.jpg =50%x)
+<img src="https://i.imgur.com/XLaETY8.jpg" width="100px">
 ![](https://i.imgur.com/1JQbvj6.jpg =50%x)
 ![](https://i.imgur.com/FnKLwuM.jpg =50%x)
 ![](https://i.imgur.com/yMrpufi.jpg =50%x)
