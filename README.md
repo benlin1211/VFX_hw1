@@ -51,18 +51,32 @@ Result:
 ### HDR Algorithm
 #### (a) Debevec's method
 Introduction: 
+
+
+
 Result:
+
+
 Radiance Map and Response Curve:
 
+
+
 #### (b) Robertson's method
-Introduction: 
+Introduction:
+
+
 Result:
+
+
 Radiance Map and Response Curve:
 
 ### Tone Mapping Algorithm
 我們有嘗試五種方法做比較：Global, Mantiuk, Drago, Durand, or Reinhard
 
 1. Global
+
+- 場景ㄧ：森林系館走廊 gamma=1.3
+- 場景二：森林系館草地 gamma=1.3
 
 2. OpenCV: Mantiuk
 
