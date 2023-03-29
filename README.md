@@ -75,19 +75,30 @@ Radiance Map and Response Curve:
 
 1. Global
 
-- 場景ㄧ：森林系館走廊 gamma=1.3
-- 場景二：森林系館草地 gamma=1.3
+- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
+- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
 
 2. OpenCV: Mantiuk
+
+- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
+- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
 
 3. OpenCV: Drago
 使用OpenCV內建tone mapping的Drago method
 
+- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
+- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
+
 4. OpenCV: Durand
+
+- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
+- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
 
 5. OpenCV: Reinhard
 
-Result: 
+- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
+- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
+
 
 ## 6 Summary
 
