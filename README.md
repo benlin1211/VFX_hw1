@@ -63,8 +63,7 @@ Result:
 - Radiance Map 
 
 
-<img src="https://i.imgur.com/FU2u3uW.jpg" width="400px"> </br> 
-<img src="https://i.imgur.com/28rKuex.jpg" width="400px">
+<img src="https://i.imgur.com/FU2u3uW.jpg" width="400px"> <img src="https://i.imgur.com/28rKuex.jpg" width="400px">
 
 - Response Curve:
 
