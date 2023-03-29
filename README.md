@@ -30,16 +30,15 @@
 * 場景ㄧ：森林系館走廊
 
 <img src="https://i.imgur.com/XLaETY8.jpg" width="100px">
-![](https://i.imgur.com/1JQbvj6.jpg =50%x)
-![](https://i.imgur.com/FnKLwuM.jpg =50%x)
-![](https://i.imgur.com/yMrpufi.jpg =50%x)
-![](https://i.imgur.com/VZohd2R.jpg =50%x)
-![](https://i.imgur.com/nUZw4cB.jpg =50%x)
-![](https://i.imgur.com/49007ct.jpg =50%x)
-![](https://i.imgur.com/t7IC58d.jpg =50%x)
-![](https://i.imgur.com/QMlfDZv.jpg =50%x)
-![](https://i.imgur.com/LtenHUO.jpg =50%x)
-
+<img src="https://i.imgur.com/1JQbvj6.jpg" width="100px">
+<img src="https://i.imgur.com/FnKLwuM.jpg" width="100px">
+<img src="https://i.imgur.com/yMrpufi.jpg" width="100px">
+<img src="https://i.imgur.com/VZohd2R.jpg" width="100px">
+<img src="https://i.imgur.com/nUZw4cB.jpg" width="100px">
+<img src="https://i.imgur.com/49007ct.jpg" width="100px">
+<img src="https://i.imgur.com/t7IC58d.jpg" width="100px">
+<img src="https://i.imgur.com/QMlfDZv.jpg" width="100px">
+<img src="https://i.imgur.com/LtenHUO.jpg" width="100px">
 
 * 場景二：森林系館草地
 
