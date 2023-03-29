@@ -29,30 +29,30 @@
 
 * 場景ㄧ：森林系館走廊
 
-![](https://i.imgur.com/XLaETY8.jpg)
-![](https://i.imgur.com/1JQbvj6.jpg)
-![](https://i.imgur.com/FnKLwuM.jpg)
-![](https://i.imgur.com/yMrpufi.jpg)
-![](https://i.imgur.com/VZohd2R.jpg)
-![](https://i.imgur.com/nUZw4cB.jpg)
-![](https://i.imgur.com/49007ct.jpg)
-![](https://i.imgur.com/t7IC58d.jpg)
-![](https://i.imgur.com/QMlfDZv.jpg)
-![](https://i.imgur.com/LtenHUO.jpg)
+![](https://i.imgur.com/XLaETY8.jpg =50%x)
+![](https://i.imgur.com/1JQbvj6.jpg =50%x)
+![](https://i.imgur.com/FnKLwuM.jpg =50%x)
+![](https://i.imgur.com/yMrpufi.jpg =50%x)
+![](https://i.imgur.com/VZohd2R.jpg =50%x)
+![](https://i.imgur.com/nUZw4cB.jpg =50%x)
+![](https://i.imgur.com/49007ct.jpg =50%x)
+![](https://i.imgur.com/t7IC58d.jpg =50%x)
+![](https://i.imgur.com/QMlfDZv.jpg =50%x)
+![](https://i.imgur.com/LtenHUO.jpg =50%x)
 
 
 * 場景二：森林系館草地
 
-![](https://i.imgur.com/szIOumI.jpg)
-![](https://i.imgur.com/NRMllN5.jpg)
-![](https://i.imgur.com/OUunUAa.jpg)
-![](https://i.imgur.com/XgIpoYx.jpg)
-![](https://i.imgur.com/fe7pkpk.jpg)
-![](https://i.imgur.com/rQjkIdX.jpg)
-![](https://i.imgur.com/IOocPoe.jpg)
-![](https://i.imgur.com/ORKWDzd.jpg)
-![](https://i.imgur.com/nvUwIQG.jpg)
-![](https://i.imgur.com/ReBUKsi.jpg)
+![](https://i.imgur.com/szIOumI.jpg =50%x)
+![](https://i.imgur.com/NRMllN5.jpg =50%x)
+![](https://i.imgur.com/OUunUAa.jpg =50%x)
+![](https://i.imgur.com/XgIpoYx.jpg =50%x)
+![](https://i.imgur.com/fe7pkpk.jpg =50%x)
+![](https://i.imgur.com/rQjkIdX.jpg =50%x)
+![](https://i.imgur.com/IOocPoe.jpg =50%x)
+![](https://i.imgur.com/ORKWDzd.jpg =50%x)
+![](https://i.imgur.com/nvUwIQG.jpg =50%x)
+![](https://i.imgur.com/ReBUKsi.jpg =50%x)
 
 
 
