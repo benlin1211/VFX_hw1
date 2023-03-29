@@ -29,8 +29,8 @@
 
 * 場景ㄧ：森林系館走廊
 
-<img src="https://i.imgur.com/XLaETY8.jpg" width="200px"
- img src="https://i.imgur.com/1JQbvj6.jpg" width="200px">
+<img src="https://i.imgur.com/XLaETY8.jpg" width="200px">
+<img src="https://i.imgur.com/1JQbvj6.jpg" width="200px">
 <img src="https://i.imgur.com/FnKLwuM.jpg" width="200px">
 <img src="https://i.imgur.com/yMrpufi.jpg" width="200px">
 <img src="https://i.imgur.com/VZohd2R.jpg" width="200px">
