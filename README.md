@@ -60,7 +60,7 @@ Result:
 
 $$O=\sum^N_{i=1}\sum^P_{j=1} \{ w(Z_{i,j}) \[ g(Z_{i,j}-\ln E_i - \ln \triangle  t_j ) \] \}^2 + \lambda \sum^{Z_{max}-1}_{Z_{min}+1} [w(z)g''(z)]^2 $$ 
 
-$$\ln E_i = \frac{\sum^P_{j=1} w(Z_{i,j}) (g(Z_{i,j})- \ln \triangle  t_j )}{\sum^P_{j=1} w(Z_{i,j})} $$
+$$\ln E_i = \frac{\sum^{P}_{j=1} w(Z_{i,j}) (g(Z_{i,j})- \ln \triangle  t_j )}{\sum^{P}_{j=1} w(Z_{i,j})} $$
 
 **Result:**
 
