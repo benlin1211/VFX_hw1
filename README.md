@@ -7,6 +7,8 @@
 ## Experiment Setup
 
 ### 相機設定
+
+
 | 項目 | 描述                  |
 |:---- |:--------------------- |
 | 機型 | NIKON D90             |
@@ -18,10 +20,39 @@
 
 ### 場景圖片
 | 項目   | 描述      |
-|:------ | --------- |
+|:------ |:--------- |
 | 尺寸   | 2144x1424 |
 | 解析度 | 300x300   |
+| 數量   | 10        |
 
+快門速度：1/4, 1/8, 1/15, 1/30, 1/60, 1/125, 1/250, 1/500, 1/1000, 1/2000
+
+* 場景ㄧ：森林系館走廊
+
+![](https://i.imgur.com/XLaETY8.jpg)
+![](https://i.imgur.com/1JQbvj6.jpg)
+![](https://i.imgur.com/FnKLwuM.jpg)
+![](https://i.imgur.com/yMrpufi.jpg)
+![](https://i.imgur.com/VZohd2R.jpg)
+![](https://i.imgur.com/nUZw4cB.jpg)
+![](https://i.imgur.com/49007ct.jpg)
+![](https://i.imgur.com/t7IC58d.jpg)
+![](https://i.imgur.com/QMlfDZv.jpg)
+![](https://i.imgur.com/LtenHUO.jpg)
+
+
+* 場景二：森林系館草地
+
+![](https://i.imgur.com/szIOumI.jpg)
+![](https://i.imgur.com/NRMllN5.jpg)
+![](https://i.imgur.com/OUunUAa.jpg)
+![](https://i.imgur.com/XgIpoYx.jpg)
+![](https://i.imgur.com/fe7pkpk.jpg)
+![](https://i.imgur.com/rQjkIdX.jpg)
+![](https://i.imgur.com/IOocPoe.jpg)
+![](https://i.imgur.com/ORKWDzd.jpg)
+![](https://i.imgur.com/nvUwIQG.jpg)
+![](https://i.imgur.com/ReBUKsi.jpg)
 
 
 
