@@ -50,54 +50,70 @@ Result:
 
 ### HDR Algorithm
 #### (a) Debevec's method
-Introduction: 
+
+**Introduction:**
+
+1. 挑一張圖片，對該圖片的 0-255 intensity 隨機各取一點作為 Sample，最多總共取 $P=256$ 點，並對所有 $N=10$ 張圖片都取一樣的位置。
+2. 找出目標函式的最佳解。$$O=\sum^N_{i=1}\sum^P_{j=1} \{w(Z_{i,j})[g(Z_{i,j}-\ln E_i - \ln \triangle  t_j )]\}^2 + \lambda \sum^{Z_{max}-1}_{Z_{min}+1} [w(z)g''(z)]^2 $$ 
+3. 解 Sparse linear system 以找出目標函式 $O$ 的最佳解。
+4. 利用解出的 Response curve $g(Z_{i,j})$，去除噪點並獲得 Radiance map. $$\ln E_i = \frac{\sum^P_{j=1} w(Z_{i,j}) (g(Z_{i,j})- \ln \triangle  t_j )}{\sum^P_{j=1} w(Z_{i,j})} $$
+
+**Result:**
+
+- Radiance Map 
+
+
+<img src="https://i.imgur.com/FU2u3uW.jpg" width="400px"> </br> 
+<img src="https://i.imgur.com/28rKuex.jpg" width="400px">
+
+- Response Curve:
+
+<img  src="https://i.imgur.com/oMjyfZ5.jpg" width="400px"><img src="https://i.imgur.com/zbmIOzY.jpg" width="400px">
 
 
 
-Result:
 
-
-Radiance Map and Response Curve:
 
 
 
 #### (b) Robertson's method
-Introduction:
+**Introduction:**
+
+1.
 
 
-Result:
+**Result:**
 
 
-Radiance Map and Response Curve:
+- Radiance Map 
+
+- Response Curve:
 
 ### Tone Mapping Algorithm
 我們有嘗試五種方法做比較：Global, Mantiuk, Drago, Durand, or Reinhard
 
 1. Global
 
-- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
-- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
+- 場景ㄧ：森林系館走廊（左圖為 Debevec, 右圖為 Robertson）
+- 場景二：森林系館草地（左圖為 Debevec, 右圖為 Robertson）
 
 2. OpenCV: Mantiuk
 
-- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
-- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
+- 場景ㄧ：森林系館走廊（左圖為 Debevec, 右圖為 Robertson）
+- 場景二：森林系館草地（左圖為 Debevec, 右圖為 Robertson）
 
 3. OpenCV: Drago
 使用OpenCV內建tone mapping的Drago method
 
-- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
-- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
+- 場景ㄧ：森林系館走廊（左圖為 Debevec, 右圖為 Robertson）
+- 場景二：森林系館草地（左圖為 Debevec, 右圖為 Robertson）
 
-4. OpenCV: Durand
+4. OpenCV: Reinhard
 
-- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
-- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
+- 場景ㄧ：森林系館走廊（左圖為 Debevec, 右圖為 Robertson）
+- 場景二：森林系館草地（左圖為 Debevec, 右圖為 Robertson）
 
-5. OpenCV: Reinhard
 
-- 場景ㄧ：森林系館走廊 gamma=0.7（左圖為 Debevec, 右圖為 Robertson）
-- 場景二：森林系館草地 gamma=1.3（左圖為 Debevec, 右圖為 Robertson）
 
 
 ## 6 Summary
@@ -106,6 +122,8 @@ Radiance Map and Response Curve:
 - 實作 MTB algorithm
 - 實作 Debevec、Robertson method
 - 實作 Tone mapping 的 Global Opertor
+
+
 
 
 ## 7. Reproduce Steps
