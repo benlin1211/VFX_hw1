@@ -30,28 +30,28 @@
 * 場景ㄧ：森林系館走廊
 
 <img src="https://i.imgur.com/XLaETY8.jpg" width="200px"
- img src="https://i.imgur.com/1JQbvj6.jpg" width="200px">
-<img src="https://i.imgur.com/FnKLwuM.jpg" width="200px">
-<img src="https://i.imgur.com/yMrpufi.jpg" width="200px">
-<img src="https://i.imgur.com/VZohd2R.jpg" width="200px">
-<img src="https://i.imgur.com/nUZw4cB.jpg" width="200px">
-<img src="https://i.imgur.com/49007ct.jpg" width="200px">
-<img src="https://i.imgur.com/t7IC58d.jpg" width="200px">
-<img src="https://i.imgur.com/QMlfDZv.jpg" width="200px">
-<img src="https://i.imgur.com/LtenHUO.jpg" width="200px">
+ img src="https://i.imgur.com/1JQbvj6.jpg" width="200px"
+ img src="https://i.imgur.com/FnKLwuM.jpg" width="200px"
+ img src="https://i.imgur.com/yMrpufi.jpg" width="200px"
+ img src="https://i.imgur.com/VZohd2R.jpg" width="200px"
+ img src="https://i.imgur.com/nUZw4cB.jpg" width="200px"
+ img src="https://i.imgur.com/49007ct.jpg" width="200px"
+ img src="https://i.imgur.com/t7IC58d.jpg" width="200px"
+ img src="https://i.imgur.com/QMlfDZv.jpg" width="200px"
+ img src="https://i.imgur.com/LtenHUO.jpg" width="200px">
 
 * 場景二：森林系館草地
 
-![](https://i.imgur.com/szIOumI.jpg =50%x)
-![](https://i.imgur.com/NRMllN5.jpg =50%x)
-![](https://i.imgur.com/OUunUAa.jpg =50%x)
-![](https://i.imgur.com/XgIpoYx.jpg =50%x)
-![](https://i.imgur.com/fe7pkpk.jpg =50%x)
-![](https://i.imgur.com/rQjkIdX.jpg =50%x)
-![](https://i.imgur.com/IOocPoe.jpg =50%x)
-![](https://i.imgur.com/ORKWDzd.jpg =50%x)
-![](https://i.imgur.com/nvUwIQG.jpg =50%x)
-![](https://i.imgur.com/ReBUKsi.jpg =50%x)
+<img src="https://i.imgur.com/szIOumI.jpg" width="200px"
+ img src="https://i.imgur.com/NRMllN5.jpg" width="200px"
+ img src="https://i.imgur.com/OUunUAa.jpg" width="200px"
+ img src="https://i.imgur.com/XgIpoYx.jpg" width="200px"
+ img src="https://i.imgur.com/fe7pkpk.jpg" width="200px"
+ img src="https://i.imgur.com/rQjkIdX.jpg" width="200px"
+ img src="https://i.imgur.com/IOocPoe.jpg" width="200px"
+ img src="https://i.imgur.com/ORKWDzd.jpg" width="200px"
+ img src="https://i.imgur.com/nvUwIQG.jpg" width="200px"
+ img src="https://i.imgur.com/ReBUKsi.jpg" width="200px">
 
 
 
