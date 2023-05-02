@@ -1,5 +1,8 @@
 # VFX_hw1
 
+R11946012 資科所 王奕方 
+R10942198 電信丙 林仲偉
+
 ## 1. Description 
 
 藉由以不同快門速度拍攝場景，還原出 High Dynamic Range image, 描繪出 response curve 和 radiance map 表現場景的能量分佈，最後進行 tone mapping 製作出貼近電腦視覺效果的 Low Dynamic Range image.
