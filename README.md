@@ -60,14 +60,18 @@ Result:
 2. 找出目標函式 $O$ 的最佳解：
 
    $$
+   
    O = \sum_{i=1}^N \sum_{j=1}^P \left\{ w(Z_{i,j}) \left[ g(Z_{i,j}) - \ln E_i - \ln \Delta t_j \right] \right\}^2 + \lambda \sum_{z=Z_{\min}+1}^{Z_{\max}-1} \left[ w(z) \cdot g''(z) \right]^2
+   
    $$
 
-3. 解 sparse linear system 以找出目標函式 $O$ 的最佳解。  
-4. 利用解出的 response curve $g(Z_{i,j})$，去除噪點並獲得 radiance map：
+4. 解 sparse linear system 以找出目標函式 $O$ 的最佳解。  
+5. 利用解出的 response curve $g(Z_{i,j})$，去除噪點並獲得 radiance map：
 
    $$
+   
    \ln E_i = \frac{\sum_{j=1}^P w(Z_{i,j}) \left( g(Z_{i,j}) - \ln \Delta t_j \right)}{\sum_{j=1}^P w(Z_{i,j})}
+   
    $$
 
 **Result:**
