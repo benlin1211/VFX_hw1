@@ -59,19 +59,13 @@ Result:
 1. 挑一張圖片，對該圖片的 0–255 intensity 隨機各取一點作為 sample，最多總共取 $P = 256$ 點，並對所有 $N = 10$ 張圖片都取一樣的位置。  
 2. 找出目標函式 $O$ 的最佳解：
 
-   $$
-   
-   O = \sum_{i=1}^N \sum_{j=1}^P \left\{ w(Z_{i,j}) \left[ g(Z_{i,j}) - \ln E_i - \ln \Delta t_j \right] \right\}^2 + \lambda \sum_{z=Z_{\min}+1}^{Z_{\max}-1} \left[ w(z) \cdot g''(z) \right]^2
-   
-   $$
+$O = \displaystyle \sum_{i=1}^N \sum_{j=1}^P \left\{ w(Z_{i,j}) \left[ g(Z_{i,j}) - \ln E_i - \ln \Delta t_j \right] \right\}^2 + \lambda \sum_{z=Z_{\min}+1}^{Z_{\max}-1} \left[ w(z) \cdot g''(z) \right]^2$
 
 4. 解 sparse linear system 以找出目標函式 $O$ 的最佳解。  
 5. 利用解出的 response curve $g(Z_{i,j})$，去除噪點並獲得 radiance map：
 
    $$
-   
    \ln E_i = \frac{\sum_{j=1}^P w(Z_{i,j}) \left( g(Z_{i,j}) - \ln \Delta t_j \right)}{\sum_{j=1}^P w(Z_{i,j})}
-   
    $$
 
 **Result:**
