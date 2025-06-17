@@ -56,21 +56,26 @@ Result:
 
 **Introduction:**
 
-1. 挑一張圖片，對該圖片的 0-255 intensity 隨機各取一點作為 Sample，最多總共取 $P=256$ 點，並對所有 $N=10$ 張圖片都取一樣的位置。
+1. 挑一張圖片，對該圖片的 0–255 intensity 隨機各取一點作為 Sample，最多總共取 $P=256$ 點，並對所有 $N=10$ 張圖片都取一樣的位置。
 2. 找出目標函式 $O$ 的最佳解。 
 
-<img src="https://hackmd.io/_uploads/B1XzKb1Elg.png"> 
+<div align="center">
+  <img src="https://hackmd.io/_uploads/B1XzKb1Elg.png" width="500" />
+  <p><b>Figure 1:</b> HDR cost function $O$</p>
+</div>
 
 3. 解 Sparse linear system 以找出目標函式 $O$ 的最佳解。
-4. 利用解出的 Response curve $g(Z_{i,j})$，去除噪點並獲得 Radiance map.  
+4. 利用解出的 Response curve $g(Z_{i,j})$，去除噪點並獲得 Radiance map.
 
-<img src="https://hackmd.io/_uploads/BkPGtZkEle.png"> 
+<div align="center">
+  <img src="https://hackmd.io/_uploads/BkPGtZkEle.png" width="500" />
+  <p><b>Figure 2:</b> Radiance estimation from response curve</p>
+</div>
 
 
 **Result:**
 
 - Radiance Map 
-
 
 <img src="https://i.imgur.com/FU2u3uW.jpg" width="400px"> <img src="https://i.imgur.com/28rKuex.jpg" width="400px">
 
