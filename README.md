@@ -59,13 +59,13 @@ Result:
 1. 挑一張圖片，對該圖片的 0-255 intensity 隨機各取一點作為 Sample，最多總共取 $P=256$ 點，並對所有 $N=10$ 張圖片都取一樣的位置。
 2. 找出目標函式 $O$ 的最佳解。 
 
-<img src="https://hackmd.io/_uploads/B1XzKb1Elg.png" width="400px"> 
-
+<img src="https://hackmd.io/_uploads/B1XzKb1Elg.png"> 
 
 3. 解 Sparse linear system 以找出目標函式 $O$ 的最佳解。
 4. 利用解出的 Response curve $g(Z_{i,j})$，去除噪點並獲得 Radiance map.  
 
-<https://hackmd.io/_uploads/BkPGtZkEle.png> 
+<img src="https://hackmd.io/_uploads/BkPGtZkEle.png"> 
+
 
 **Result:**
 
