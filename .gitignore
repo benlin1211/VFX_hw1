@@ -1,0 +1,7 @@
+*.png
+*.PNG
+*.jpg
+*.JPG
+*.NEF
+*.hdr
+**/__pycache__/**

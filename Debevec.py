@@ -85,12 +85,20 @@ def load_data(data_name):
     images = [cv2.imread(fn) for fn in filenames]
     # print(len(images))
     
-    exposure_times = 1/np.array([4.0, 8.0, 15.0, 30.0, 60.0, 125.0, 250.0, 500.0, 1000.0, 2000.0], dtype=np.float32)
-    if data_name=="exposures_1":
-        exposure_times = np.array([13.0, 10.0, 4.0, 3.2, 1.0, 0.8, 0.3, 1/4.0, 1/60.0, 1/80.0], dtype=np.float32)
-    if data_name=="exposures_4":
-        exposure_times = 1/np.array([4.0, 8.0, 15.0, 30.0, 60.0, 125.0, 250.0, 500.0, 1000.0], dtype=np.float32)
+    # exposure_times = 1/np.array([4.0, 8.0, 15.0, 30.0, 60.0, 125.0, 250.0, 500.0, 1000.0, 2000.0], dtype=np.float32)
+    # if data_name=="exposures_1":
+    #     exposure_times = np.array([13.0, 10.0, 4.0, 3.2, 1.0, 0.8, 0.3, 1/4.0, 1/60.0, 1/80.0], dtype=np.float32)
+    # if data_name=="exposures_4":
+    #     exposure_times = 1/np.array([4.0, 8.0, 15.0, 30.0, 60.0, 125.0, 250.0, 500.0, 1000.0], dtype=np.float32)
     
+    if data_name=="exposures_1": # TBD. IDK why there is this one?
+        exposure_times = np.array([13.0, 10.0, 4.0, 3.2, 1.0, 0.8, 0.3, 1/4.0, 1/60.0, 1/80.0], dtype=np.float32)
+    elif data_name=="exposures_2": # Hallway 
+        exposure_times = 1/np.array([2.0, 4.0, 8.0, 15.0, 30.0, 60.0, 125.0, 250.0, 500.0, 1000.0, 2000.0], dtype=np.float32)
+    elif data_name=="exposures_4": # French fries
+        exposure_times = 1/np.array([2.0, 4.0, 8.0, 15.0, 30.0, 60.0, 125.0, 250.0, 500.0, 1000.0, 2000.0], dtype=np.float32)
+    else:
+        raise NotImplementedError
     # important: 取log
     ln_exposure_times = np.log(exposure_times)
     return images, ln_exposure_times
