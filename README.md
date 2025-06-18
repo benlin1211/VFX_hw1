@@ -146,5 +146,5 @@ Result:
 2. Know Paul Debevec's method from week 3.
 3. Download sample test images from [here](http://www.mpii.mpg.de/resources/hdr/calibration/exposures.tgz) or [here](http://www.debevec.org/Research/HDR/SourceImages/Memorial_SourceImages.zip) (hdr [here](http://www.debevec.org/Research/HDR/memorial.hdr)).
 
-4. Download our images from [here]()
+4. Download our images from Google Grive: [exposure_2](https://drive.google.com/file/d/1wygoqgJoXzPD9x8REvFl9XwyI2Di_pCR/view?usp=drive_link), [exposure_4](https://drive.google.com/file/d/1aSO9bI7EW3t9AE-k3teJD7JoaS2nT82a/view?usp=drive_link)
 
